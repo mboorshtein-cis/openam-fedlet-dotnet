@@ -119,14 +119,18 @@ namespace gov.dhs.uscis.icam.fedlet
 
                     foreach (string AttributeName in User.Attributes.Keys)
                     {
-                        string HeaderName = this.attr2header[AttributeName];
-                        if (HeaderName == null)
-                        {
-                            HeaderName = AttributeName;
+                        string HeaderName = AttributeName;
+                        if (this.attr2header.ContainsKey(AttributeName)) 
+                        { 
+                            HeaderName = this.attr2header[AttributeName];
                         }
+
+
+                  
 
                         app.Request.Headers.Remove(HeaderName);
                         app.Request.Headers.Add(HeaderName, User.Attributes[AttributeName]);
+                        
                     }
 
                 }
