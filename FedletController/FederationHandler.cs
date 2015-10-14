@@ -66,7 +66,7 @@ namespace gov.dhs.uscis.icam.fedlet
                     {
                         ArrayList AttributeValues = authnResponse.Attributes[AttributeName] as ArrayList;
                         string AttributeValue = "";
-                        if (AttributeValue.Length > 0)
+                        if (AttributeValues.Count > 0)
                         {
                             AttributeValue = AttributeValues[0] as String;
                         }
